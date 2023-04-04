@@ -6,7 +6,7 @@
 
               <!--logo start-->
               <a href="/" class="logo-brand">
-                  <img class="retina" @isset($overlay) src="assets/img/logo-dark.png" @else src="assets/img/logo.png" @endisset alt="Massive">
+                  <img class="retina" @isset($overlay) src="/assets/img/logo-dark.png" @else src="/assets/img/logo.png" @endisset alt="Massive">
               </a>
               <!--logo end-->
 

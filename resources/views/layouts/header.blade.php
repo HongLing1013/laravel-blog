@@ -5,7 +5,7 @@
           <nav class="menuzord js-primary-navigation" role="navigation" aria-label="Primary Navigation">
 
               <!--logo start-->
-              <a href="index.html" class="logo-brand">
+              <a href="/" class="logo-brand">
                   <img class="retina" @isset($overlay) src="assets/img/logo-dark.png" @else src="assets/img/logo.png" @endisset alt="Massive">
               </a>
               <!--logo end-->

@@ -38,11 +38,7 @@
 
 <body>
 
-    <!--  preloader start -->
-    <div id="tb-preloader">
-        <div class="tb-preloader-wave"></div>
-    </div>
-    <!-- preloader end -->
+    @include('layouts.preloader')
 
     <div class="wrapper">
 

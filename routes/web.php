@@ -21,8 +21,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/content', function () {
-    return view('content');
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Route::get('/posts', function () {

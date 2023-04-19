@@ -26,7 +26,10 @@ Route::get('/contact', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts.list');
+    $post =[ 1,2,3,4,5 ]; // 塞假資料
+    return view('posts.list' ,['posts' => $post]); 
+    // post.list為顯示頁的檔名 , posts為需要帶入的資料變數名稱
+    // 如果所以view層收到的變數名稱為posts
 });
 
 Route::get('/posts/{id}', function ($id) {

@@ -32,7 +32,7 @@ Route::get('/posts/show/{post}' , [ PostController::class, 'show'] ); //文章�
 // CRUD
 Route::post('/posts' , [ PostController::class, 'store'] ); //Create
 Route::get('/posts/{post}' , [ PostController::class, 'show'] ); //Read
-Route::get('/posts/{post}' , [ PostController::class, 'update'] ); //Update
+Route::put('/posts/{post}' , [ PostController::class, 'update'] ); //Update
 Route::delete('/posts/{post}' , [ PostController::class, 'destroy'] ); //Delete
 
 // 3 routing: create / edit / list

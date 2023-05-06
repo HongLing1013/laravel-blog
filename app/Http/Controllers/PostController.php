@@ -34,11 +34,26 @@ class PostController extends Controller
         // $post->user_id = Auth::id(); //取得USER ID
         $post->save();//存入資料庫
 
-        return redirect('/posts');
+        return redirect('/posts/admin');
     }
 
     public function show(Post $post)
     {
         return view('posts.showByAdmin' , ['post' => $post]);
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit' , ['post' => $post]);
+    }
+
+    // 因為update來的時候很多筆資料需要承接，所以需要用到Request 
+    // Request 要養成好習慣 寫在前面
+    public function update(Request $request , Post $post)
+    {
+        $post->fill($request->all());
+        $post->save();
+
+        return redirect('/posts/admin');
     }
 }

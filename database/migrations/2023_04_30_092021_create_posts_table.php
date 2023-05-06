@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id'); //key
-            $table->unsignedInteger('user_id'); // 關聯欄位
+            // $table->unsignedInteger('user_id'); // 關聯欄位
             $table->string('title');
             $table->text('content');
             $table->timestamps(); // 時間戳 會自動產生 created_at 和 updated_at 兩個欄位
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
             //設定關聯並且清除與使用者有關的所有資料
         });
     }

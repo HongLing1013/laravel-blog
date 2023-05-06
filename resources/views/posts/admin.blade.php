@@ -18,8 +18,6 @@
 @endsection
 
 @section('content')
-<section class="body-content ">
-
     <div class="page-content">
         <div class="container">
             <div class="clearfix toolbox">
@@ -34,7 +32,7 @@
                         <span class="pull-right">
                             <a href="/posts/show/{{ $post->id }}" class="btn btn-default">View</a>
                             <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger" onclick="deletePost({{ $post->id }})">Delete</button>
                         </span>
                     </li>
                 @endforeach
@@ -42,6 +40,25 @@
         </div>
     </div>
 
-</section>
+    <form id="delete_form" action="/posts/id" method="post">
+        <input type="hidden" name="_method" value="delete">
+        @csrf
+    </form>
 @endsection
+
+@section('script')
+<script>
+    let deletePost = function(id){
+        let result = confirm('確定刪除嗎?');
+        // console.log(result);
+        if(result){
+            let actionUrl = '/posts/' + id;
+            // console.log(actionUrl);
+            $('#delete_form').attr('action', actionUrl).submit();
+        }
+    }
+</script>
+@endsection
+
+
 

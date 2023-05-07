@@ -39,23 +39,7 @@
             </ul>
         </div>
     </div>
-    
-@endsection
 
-@section('script')
-<script>
-    let deletePost = function(id){
-        let result = confirm('確定刪除嗎?');
-        // console.log(result);
-        if(result){
-            let actionUrl = '/posts/' + id;
-            // console.log(actionUrl);
-            $.post(actionUrl, {_method: 'delete'}).done(function(){
-                window.location.reload();
-            });
-        }
-    }
-</script>
 @endsection
 
 

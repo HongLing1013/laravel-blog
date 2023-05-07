@@ -39,11 +39,7 @@
             </ul>
         </div>
     </div>
-
-    <form id="delete_form" action="/posts/id" method="post">
-        <input type="hidden" name="_method" value="delete">
-        @csrf
-    </form>
+    
 @endsection
 
 @section('script')
@@ -54,7 +50,9 @@
         if(result){
             let actionUrl = '/posts/' + id;
             // console.log(actionUrl);
-            $('#delete_form').attr('action', actionUrl).submit();
+            $.post(actionUrl, {_method: 'delete'}).done(function(){
+                window.location.reload();
+            });
         }
     }
 </script>

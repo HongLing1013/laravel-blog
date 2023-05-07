@@ -12,7 +12,7 @@ deletePost = function(id){
         let actionUrl = '/posts/' + id;
         // console.log(actionUrl);
         $.post(actionUrl, {_method: 'delete'}).done(function(){
-            window.location.reload();
+            location.href = '/posts/admin';
         });
     }
 }
